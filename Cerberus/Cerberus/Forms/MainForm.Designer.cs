@@ -1472,6 +1472,7 @@
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.RibbonControlMain);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Ribbon = this.RibbonControlMain;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

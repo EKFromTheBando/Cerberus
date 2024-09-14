@@ -66,10 +66,13 @@
       <HintPath>..\packages\ISOLib.3.0.0\lib\net48\ISO.dll</HintPath>
     </Reference>
     <Reference Include="ISOLib">
-      <HintPath>..\..\..\..\Desktop\arisen-studio-main\src\References\ISOLib.dll</HintPath>
+      <HintPath>..\..\..\..\PC\For Making Mod Tools\ISOLib.dll</HintPath>
     </Reference>
     <Reference Include="JRPC">
       <HintPath>..\..\..\..\PC\For Making Mod Tools\JRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Test.Xbox.Profiles">
+      <HintPath>..\..\..\..\PC\For Making Mod Tools\Microsoft.Test.Xbox.Profiles.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -118,7 +121,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="xdrpc">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Xbox 360 SDK\bin\win32\xdrpc.dll</HintPath>
+      <HintPath>..\..\..\..\PC\For Making Mod Tools\xdrpc.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

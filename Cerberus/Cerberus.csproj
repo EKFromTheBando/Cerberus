@@ -1,0 +1,765 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A75E347-41FC-46CD-85C5-004E259054B1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Cerberus</RootNamespace>
+    <AssemblyName>Cerberus</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v24.1.Core, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 24.1\Components\Bin\Framework\DevExpress.XtraDialogs.v24.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v24.1, Version=24.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DiscordRPC, Version=1.2.1.24, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DiscordRichPresence.1.2.1.24\lib\net45\DiscordRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer, Version=2.14.0.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Humanizer.Core.2.14.1\lib\netstandard2.0\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ISO, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ISOLib.3.0.0\lib\net48\ISO.dll</HintPath>
+    </Reference>
+    <Reference Include="ISOLib">
+      <HintPath>..\..\..\..\Desktop\arisen-studio-main\src\References\ISOLib.dll</HintPath>
+    </Reference>
+    <Reference Include="JRPC">
+      <HintPath>..\..\..\..\PC\For Making Mod Tools\JRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.9\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.8.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="xdevkit">
+      <HintPath>..\..\..\..\PC\For Making Mod Tools\xdevkit.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="xdrpc">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Xbox 360 SDK\bin\win32\xdrpc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cerberus\Forms\Dialogs\ListViewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\Dialogs\ListViewDialog.Designer.cs">
+      <DependentUpon>ListViewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Forms\LEDControlsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\LEDControlsForm.Designer.cs">
+      <DependentUpon>LEDControlsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Forms\GameSaveResignerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\GameSaveResignerForm.Designer.cs">
+      <DependentUpon>GameSaveResignerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Forms\FanSpeedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\FanSpeedForm.Designer.cs">
+      <DependentUpon>FanSpeedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Helpers\EndianIO.cs" />
+    <Compile Include="Cerberus\Helpers\XboxHelpers.cs" />
+    <Compile Include="Cerberus\Helpers\XboxMemoryStream.cs" />
+    <Compile Include="Cerberus\IO\UserFolders.cs" />
+    <Compile Include="Cerberus\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Forms\ModuleConfigurator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\ModuleConfigurator.Designer.cs">
+      <DependentUpon>ModuleConfigurator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Forms\ModuleLibForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\ModuleLibForm.Designer.cs">
+      <DependentUpon>ModuleLibForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Forms\ScreenshotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\ScreenshotForm.Designer.cs">
+      <DependentUpon>ScreenshotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Forms\UserRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\UserRegistrationForm.Designer.cs">
+      <DependentUpon>UserRegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Forms\XNotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cerberus\Forms\XNotificationForm.Designer.cs">
+      <DependentUpon>XNotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cerberus\Helpers\DialogExtensions.cs" />
+    <Compile Include="Cerberus\Helpers\IPHelper.cs" />
+    <Compile Include="Cerberus\Helpers\StringHelpers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cerberus\Forms\Dialogs\ListViewDialog.resx">
+      <DependentUpon>ListViewDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\LEDControlsForm.resx">
+      <DependentUpon>LEDControlsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\GameSaveResignerForm.resx">
+      <DependentUpon>GameSaveResignerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\ModuleConfigurator.resx">
+      <DependentUpon>ModuleConfigurator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\ModuleLibForm.resx">
+      <DependentUpon>ModuleLibForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\ScreenshotForm.resx">
+      <DependentUpon>ScreenshotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\UserRegistrationForm.resx">
+      <DependentUpon>UserRegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\FanSpeedForm.resx">
+      <DependentUpon>FanSpeedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cerberus\Forms\XNotificationForm.resx">
+      <DependentUpon>XNotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\garbage.png" />
+    <None Include="Resources\cerb.png" />
+    <None Include="Resources\cerb.ico" />
+    <None Include="Resources\rgb.png" />
+    <None Include="Resources\fan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\website.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twitter.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discord.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xbox_manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\website.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewsettings.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usb_connection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uninstall.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uninstall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trainers.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three_dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spoofer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spoof.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send_feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_profiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scan-users.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_update.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore_file.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore_backup.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resources.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile_switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plugins_editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playstation4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\packages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\package_manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_url.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_file.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more_or_equal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modules.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modules.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\library.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\less_or_equal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\launcher.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\install_svg.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\install.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-mods.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-uninstall.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tools.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sort.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-show-details.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-share.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-settings.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-save.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-project-setup.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-preview-file.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-preview-file-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plugin.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-opened-folder.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-opened-box.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-open-archive.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-no-profile.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-list.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-install.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-heart.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-games.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-expand.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-equals.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-details.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-download.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-download-from-cloud.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-download-file.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-custom.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-custom-mods.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-copy-link.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-collapse.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-beer.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-applications.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-anvil.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-announcement.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-advanced-search.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-new.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-favorite.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-custom-mods.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homebrew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\games_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game_region.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game_patch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game_controller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_launch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equal_sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-user.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downloads_folder.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downloads_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\downloads.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dots_vertical.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discord_status1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discord_status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnect.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\console_power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\console_manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cheats.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change_profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change-user.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\capture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boot_plugins_editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup_restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup_files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available-update.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_up.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_down.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\announcement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-user.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_reload1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_reload.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_refresh.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_question.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_forbid.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_arrow3right.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actions_arrow3left.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\about.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XboxSlimE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XboxSlim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XboxFatElite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XboxFat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayStation3SuperSlim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayStation3Slim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayStation3Fat.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

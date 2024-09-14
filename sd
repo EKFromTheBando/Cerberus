@@ -1,0 +1,11 @@
+[33mcommit 2e667f77253c8dca8745c75a6042c457e0ebb204[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mFileBrowser[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: EK <Ekfromthebando@yahoo.com>
+Date:   Sun Sep 8 13:16:49 2024 -0400
+
+    Add project files.
+
+[33mcommit bbfec4e67eca13c295ac70ccce3a18058ed6456d[m
+Author: EK <Ekfromthebando@yahoo.com>
+Date:   Sun Sep 8 13:16:47 2024 -0400
+
+    Add .gitattributes and .gitignore.

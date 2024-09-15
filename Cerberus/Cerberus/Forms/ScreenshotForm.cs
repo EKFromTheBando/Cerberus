@@ -146,7 +146,7 @@ namespace Cerberus.Cerberus.Forms
             {
                 Clipboard.SetImage(PictureBoxScreenshot.Image);
             }
-            XtraMessageBox.Show("Copied Screenshot to Clipboard!", "Tom's Awful RGH Tool", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            XtraMessageBox.Show("Copied Screenshot to Clipboard!", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -162,7 +162,7 @@ namespace Cerberus.Cerberus.Forms
             }
             else
             {
-                XtraMessageBox.Show("No screenshot was found, so there isn't any to save!", "Tom's Awful RGH Tool", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                XtraMessageBox.Show("No screenshot was found, so there isn't any to save!", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 
@@ -256,7 +256,7 @@ namespace Cerberus.Cerberus.Forms
             }
             else
             {
-                XtraMessageBox.Show("No screenshot was found, so there isn't any to save!", "Tom's Awful RGH Tool", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                XtraMessageBox.Show("No screenshot was found, so there isn't any to save!", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 

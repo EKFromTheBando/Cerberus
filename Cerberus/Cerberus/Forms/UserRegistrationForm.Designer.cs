@@ -44,7 +44,7 @@
             // 
             this.TextEditUsername.Location = new System.Drawing.Point(12, 25);
             this.TextEditUsername.Name = "TextEditUsername";
-            this.TextEditUsername.Size = new System.Drawing.Size(239, 22);
+            this.TextEditUsername.Size = new System.Drawing.Size(239, 26);
             this.TextEditUsername.TabIndex = 0;
             // 
             // LabelMessage
@@ -65,7 +65,7 @@
             // 
             // ButtonRegisterUser
             // 
-            this.ButtonRegisterUser.Location = new System.Drawing.Point(12, 153);
+            this.ButtonRegisterUser.Location = new System.Drawing.Point(17, 195);
             this.ButtonRegisterUser.Name = "ButtonRegisterUser";
             this.ButtonRegisterUser.Size = new System.Drawing.Size(239, 29);
             this.ButtonRegisterUser.TabIndex = 4;
@@ -78,7 +78,7 @@
             this.TextEditPassword.Name = "TextEditPassword";
             this.TextEditPassword.Properties.PasswordChar = '*';
             this.TextEditPassword.Properties.UseSystemPasswordChar = true;
-            this.TextEditPassword.Size = new System.Drawing.Size(239, 22);
+            this.TextEditPassword.Size = new System.Drawing.Size(239, 26);
             this.TextEditPassword.TabIndex = 5;
             // 
             // TextEditConfirmPassword
@@ -87,7 +87,7 @@
             this.TextEditConfirmPassword.Name = "TextEditConfirmPassword";
             this.TextEditConfirmPassword.Properties.PasswordChar = '*';
             this.TextEditConfirmPassword.Properties.UseSystemPasswordChar = true;
-            this.TextEditConfirmPassword.Size = new System.Drawing.Size(239, 22);
+            this.TextEditConfirmPassword.Size = new System.Drawing.Size(239, 26);
             this.TextEditConfirmPassword.TabIndex = 7;
             // 
             // labelControl1
@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 195);
+            this.ClientSize = new System.Drawing.Size(268, 237);
             this.Controls.Add(this.TextEditConfirmPassword);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.TextEditPassword);

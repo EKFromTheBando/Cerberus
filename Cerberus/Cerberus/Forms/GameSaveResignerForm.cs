@@ -20,7 +20,7 @@ namespace Cerberus.Cerberus.Forms
         {
             InitializeComponent();
 
-            this.xboxConsole = xboxConsole;
+            xboxConsole = xboxConsole;
         }
 
         public Stfs PackageGameSave { get; set; }
@@ -217,7 +217,7 @@ namespace Cerberus.Cerberus.Forms
             {
                 if (file.IsDirectory)
                 {
-                    MessageBox.Show(file.Name);
+                    XtraMessageBox.Show(file.Name);
 
                     if (!file.Name.Contains("0000000000000000"))
                     {

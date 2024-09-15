@@ -11,7 +11,7 @@ namespace Cerberus.Cerberus
     {
         private XboxConsole console;
         private XboxManager manager;
-        private readonly EndianIO xms;
+        private readonly Cerberus.Helpers.EndianIO xms;
         private uint connection;
 
         public FanSpeedForm()
@@ -24,7 +24,7 @@ namespace Cerberus.Cerberus
                 try { console = manager.OpenConsole(File.Exists("OverrideConsoleName.txt") ? File.ReadAllText("OverrideConsoleName.txt") : manager.DefaultConsole); }
                 catch (Exception) { console = manager.OpenConsole(manager.DefaultConsole); }
                 connection = console.OpenConnection(null);
-                xms = new EndianIO(new XboxMemoryStream(console.DebugTarget), EndianTypes.BigEndian);
+                xms = new Cerberus.Helpers.EndianIO(new XboxMemoryStream(console.DebugTarget), EndianTypes.BigEndian);
                 var smcVerRequest = new byte[16];
                 var smcVerResponse = new byte[16];
                 smcVerRequest[0] = (byte)XboxHelpers.SMCCommands.SMC_QUERY_VERSION;
@@ -32,7 +32,7 @@ namespace Cerberus.Cerberus
             }
             catch (Exception ex)
             {
-                XtraMessageBox.Show(string.Format("Failed to connect to {0}. Make sure {0} is powered on, responsive, and connected to the local network.{1}{2}", manager.DefaultConsole, Environment.NewLine, XboxHelpers.CreateExceptionMessage(ex, manager)), "DevTool Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show(string.Format("Failed to connect to {0}. Make sure {0} is powered on, responsive, and connected to the local network.{1}{2}", manager.DefaultConsole, Environment.NewLine, XboxHelpers.CreateExceptionMessage(ex, manager)), "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
             }
 

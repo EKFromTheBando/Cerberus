@@ -88,21 +88,21 @@ namespace Cerberus.Cerberus.Helpers
             {
                 case SeekOrigin.Begin:
                     {
-                        this.Position = Position;
+                        Position = Position;
                         break;
                     }
                 case SeekOrigin.Current:
                     {
-                        this.Position += Position;
+                        Position += Position;
                         break;
                     }
                 case SeekOrigin.End:
                     {
-                        this.Position -= Position;
+                        Position -= Position;
                         break;
                     }
             }
-            return this.Position;
+            return Position;
         }
 
         public override void SetLength(long Value) { throw new InvalidOperationException(); }

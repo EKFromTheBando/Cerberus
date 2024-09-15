@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraBars;
+﻿using Cerberus.Cerberus.Security;
+using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
@@ -21,10 +22,11 @@ namespace Cerberus.Cerberus.Forms
     public partial class MainForm : RibbonForm
     {
         public static IXboxConsole XboxConsole;
-        private bool _isAuthenticated = false;
+        private bool IsAuthenticated = false;
         private readonly string _connectionString;
         private string _xblStatus;
         private DiscordRpcClient _client;
+        private System.Timers.Timer _processTimer;
 
 
         public static bool IsConsoleConnected { get; private set; } = false;
@@ -32,6 +34,7 @@ namespace Cerberus.Cerberus.Forms
         public MainForm()
         {
             InitializeComponent();
+            InitializeProcessTimer();
 
             // Set up password text box
             var passwordTextEdit = new RepositoryItemTextEdit
@@ -43,7 +46,7 @@ namespace Cerberus.Cerberus.Forms
             var connectionStringSettings = ConfigurationManager.ConnectionStrings["UserInfoDb"];
             if (connectionStringSettings == null)
             {
-                MessageBox.Show("Connection string 'UserInfoDb' not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Connection string 'UserInfoDb' not found.");
                 // Handle the error or exit
                 return;
             }
@@ -86,7 +89,7 @@ namespace Cerberus.Cerberus.Forms
 
         private void ButtonDisconnectConsole_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XboxConsole?.CloseConnection(0);
+            XboxConsole?.CloseConnection(3);
             ButtonDisconnectConsole.Enabled = false;
         }
 
@@ -122,6 +125,18 @@ namespace Cerberus.Cerberus.Forms
                     XtraMessageBox.Show(XboxConsole.Name + " is already frozen.", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void InitializeProcessTimer()
+        {
+            _processTimer = new System.Timers.Timer(15000); // 15 seconds interval
+            _processTimer.Elapsed += OnProcessTimerElapsed;
+            _processTimer.Start();
+        }
+
+        private void OnProcessTimerElapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Processes.Pulse();
         }
 
         private void ButtonDiscordPresence_CheckedChanged(object sender, ItemClickEventArgs e)
@@ -325,6 +340,7 @@ namespace Cerberus.Cerberus.Forms
                 byte[] hashBytes = new byte[36];
                 Array.Copy(salt, 0, hashBytes, 0, 16);
                 Array.Copy(hash, 0, hashBytes, 16, 20);
+
                 return Convert.ToBase64String(hashBytes);
             }
         }
@@ -332,21 +348,36 @@ namespace Cerberus.Cerberus.Forms
         private bool VerifyPassword(string storedHash, string enteredPassword)
         {
             var hashBytes = Convert.FromBase64String(storedHash);
+
+            // Log the stored hash bytes
+            Console.WriteLine("Stored Hash Bytes: " + BitConverter.ToString(hashBytes));
+
             byte[] salt = new byte[16];
             Array.Copy(hashBytes, 0, salt, 0, 16);
+
+            // Log the extracted salt
+            Console.WriteLine("Extracted Salt: " + BitConverter.ToString(salt));
+
             using (var pbkdf2 = new Rfc2898DeriveBytes(enteredPassword, salt, 10000))
             {
                 byte[] hash = pbkdf2.GetBytes(20);
+
+                // Log the derived hash
+                Console.WriteLine("Derived Hash: " + BitConverter.ToString(hash));
+
                 for (int i = 0; i < 20; i++)
                 {
                     if (hashBytes[i + 16] != hash[i])
                     {
+                        // Log the mismatching byte
+                        Console.WriteLine($"Mismatch at byte {i}: {hashBytes[i + 16]} != {hash[i]}");
                         return false;
                     }
                 }
             }
             return true;
         }
+
 
         private void ButtonLogin_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -359,39 +390,97 @@ namespace Cerberus.Cerberus.Forms
                 return;
             }
 
-            using (var conn = new SqlConnection(_connectionString))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                string query = "SELECT PasswordHash FROM UserInfo WHERE Username = @Username";
+                string query = "SELECT PasswordHash, IsUserBanned FROM UserInfo WHERE Username = @Username";
 
-                using (var cmd = new SqlCommand(query, conn))
+                using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.Add("@Username", SqlDbType.NVarChar, 256).Value = username;
-                    var result = cmd.ExecuteScalar();
-
-                    if (result != null)
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        string storedPasswordHash = result.ToString();
-                        if (VerifyPassword(storedPasswordHash, password))
+                        if (reader.Read())
                         {
-                            XtraMessageBox.Show("Login successful.", "Cerberus AIO");
-                            _isAuthenticated = true;
+                            string storedPasswordHash = reader["PasswordHash"].ToString();
+                            bool isUserBanned = Convert.ToBoolean(reader["IsUserBanned"]);
 
-                            EnableControls();
-                            ButtonConnectConsole.Enabled = true;
+                            if (isUserBanned)
+                            {
+                                XtraMessageBox.Show("Your account has been banned. Please contact support.", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Application.Exit(); // Close the application
+                                return;
+                                //Add haxxor code to blow up their pc i reckon
+                            }
+
+                            if (VerifyPassword(storedPasswordHash, password))
+                            {
+                                XtraMessageBox.Show("Login successful.", "Cerberus AIO");
+                                IsAuthenticated = true;
+                                
+                                if (CheckEditRememberLogin.Checked == true) { SaveUserCredentials(username); }
+
+                                ConnectToConsole();
+                                UpdateCpuKeyIfNeeded(username);
+
+
+                                EnableControls();
+                                RibbonControlMain.ApplicationButtonText = username;
+                            }
+                            else
+                            {
+                                XtraMessageBox.Show("Invalid password.", "Cerberus AIO");
+                            }
                         }
                         else
                         {
-                            XtraMessageBox.Show("Invalid password.", "Cerberus AIO");
+                            XtraMessageBox.Show("Username not found.", "Cerberus AIO");
                         }
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Username not found.", "Cerberus AIO");
                     }
                 }
             }
         }
+
+
+        private void SaveUserCredentials(string username)
+        {
+            Properties.Settings.Default.Username = username;
+            Properties.Settings.Default.Password = TextEditPassword.EditValue?.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void UpdateCpuKeyIfNeeded(string username)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+
+                // Retrieve the existing CPU Key (if any)
+                string query = "SELECT CPUKey FROM UserInfo WHERE Username = @Username";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.Add("@Username", SqlDbType.NVarChar, 256).Value = username;
+                    var result = cmd.ExecuteScalar();
+
+                    if (result == null || string.IsNullOrEmpty(result.ToString()))
+                    {
+                        // If CPU Key is not present, generate and insert it
+                        string cpuKey = XboxConsole.GetCPUKey();
+                        if (cpuKey != null)
+                        {
+                            string updateQuery = "UPDATE UserInfo SET CPUKey = @CPUKey WHERE Username = @Username";
+                            using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                            {
+                                updateCmd.Parameters.Add("@CPUKey", SqlDbType.NVarChar, 256).Value = cpuKey;
+                                updateCmd.Parameters.Add("@Username", SqlDbType.NVarChar, 256).Value = username;
+                                updateCmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
 
         private void ButtonGameSaveResigner_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -421,6 +510,8 @@ namespace Cerberus.Cerberus.Forms
         {
             DisposeDiscordRPC();
             base.OnFormClosing(e);
+            _processTimer?.Stop();
+            _processTimer?.Dispose();
         }
 
         private void ButtonClearCache_ItemClick(object sender, ItemClickEventArgs e)
@@ -488,6 +579,13 @@ namespace Cerberus.Cerberus.Forms
         {
             ApplySavedTheme();
             DisableControls();
+            Processes.Pulse();
+
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.Username))
+            {
+                TextEditUsername.EditValue = Properties.Settings.Default.Username;
+                TextEditPassword.EditValue = Properties.Settings.Default.Password;
+            }
         }
 
         // Call this method when a user selects a theme from the DevExpress skin options
@@ -515,8 +613,8 @@ namespace Cerberus.Cerberus.Forms
         private void DisableControls()
         {
             ButtonConnectConsole.Enabled = false;
-            // Loop through controls on the form (this.Controls)
-            foreach (Control control in this.Controls)
+            // Loop through controls on the form (Controls)
+            foreach (Control control in Controls)
             {
                 // Exclude the login controls and the RibbonControl from being disabled
                 if (control.Name != "ButtonRegister" &&
@@ -545,8 +643,8 @@ namespace Cerberus.Cerberus.Forms
             // Enable ButtonConnectConsole
             ButtonConnectConsole.Enabled = true;
 
-            // Loop through controls on the form (this.Controls)
-            foreach (Control control in this.Controls)
+            // Loop through controls on the form (Controls)
+            foreach (Control control in Controls)
             {
                 // Exclude the login controls and the RibbonControl from being enabled
                 if (control.Name != "ButtonRegister" &&
@@ -554,7 +652,7 @@ namespace Cerberus.Cerberus.Forms
                     control.Name != "ButtonConnect" &&
                     control.Name != "TextEditUsername" &&
                     control.Name != "TextEditPassword" &&
-                    !(control is DevExpress.XtraBars.Ribbon.RibbonControl))  // Exclude the RibbonControl
+                    !(control is RibbonControl))  // Exclude the RibbonControl
                 {
                     control.Enabled = true;
                 }
@@ -570,6 +668,20 @@ namespace Cerberus.Cerberus.Forms
             }
         }
 
+        private void ButtonKeyvaultChecker_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new KeyvaultCheckerForm().Show();
+        }
 
+        private void RibbonControlMain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonINIEditor_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new INIEditorForm(XboxConsole).Show();
+        }
     }
+    
 }

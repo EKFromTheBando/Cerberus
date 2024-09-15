@@ -12,7 +12,7 @@ namespace Cerberus.Cerberus
         public LEDControlsForm(IXboxConsole xboxConsole)
         {
             InitializeComponent();
-            this.xboxConsole = xboxConsole;
+            xboxConsole = xboxConsole;
         }
 
         private void FanSpeedForm_Load(object sender, EventArgs e)

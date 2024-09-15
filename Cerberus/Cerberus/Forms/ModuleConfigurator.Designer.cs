@@ -28,157 +28,157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ModuleGridControl = new DevExpress.XtraGrid.GridControl();
-            this.moduleGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColumnAddress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColumnSize = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ButtonInjectFromConsole = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonRefreshModules = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonClearModules = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonInjectFromPC = new DevExpress.XtraEditors.SimpleButton();
-            this.LabelModulePath = new DevExpress.XtraEditors.LabelControl();
-            this.TextEditPath = new DevExpress.XtraEditors.TextEdit();
-            this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
-            ((System.ComponentModel.ISupportInitialize)(this.ModuleGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEditPath.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
-            this.SuspendLayout();
+            ModuleGridControl = new DevExpress.XtraGrid.GridControl();
+            moduleGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ColumnName = new DevExpress.XtraGrid.Columns.GridColumn();
+            ColumnAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            ColumnSize = new DevExpress.XtraGrid.Columns.GridColumn();
+            ButtonInjectFromConsole = new DevExpress.XtraEditors.SimpleButton();
+            ButtonRefreshModules = new DevExpress.XtraEditors.SimpleButton();
+            ButtonClearModules = new DevExpress.XtraEditors.SimpleButton();
+            ButtonInjectFromPC = new DevExpress.XtraEditors.SimpleButton();
+            LabelModulePath = new DevExpress.XtraEditors.LabelControl();
+            TextEditPath = new DevExpress.XtraEditors.TextEdit();
+            separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
+            ((System.ComponentModel.ISupportInitialize)(ModuleGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(moduleGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(TextEditPath.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(separatorControl1)).BeginInit();
+            SuspendLayout();
             // 
             // ModuleGridControl
             // 
-            this.ModuleGridControl.Location = new System.Drawing.Point(12, 12);
-            this.ModuleGridControl.MainView = this.moduleGridView;
-            this.ModuleGridControl.Name = "ModuleGridControl";
-            this.ModuleGridControl.Size = new System.Drawing.Size(422, 338);
-            this.ModuleGridControl.TabIndex = 0;
-            this.ModuleGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.moduleGridView});
+            ModuleGridControl.Location = new System.Drawing.Point(12, 12);
+            ModuleGridControl.MainView = moduleGridView;
+            ModuleGridControl.Name = "ModuleGridControl";
+            ModuleGridControl.Size = new System.Drawing.Size(422, 338);
+            ModuleGridControl.TabIndex = 0;
+            ModuleGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            moduleGridView});
             // 
             // moduleGridView
             // 
-            this.moduleGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.ColumnName,
-            this.ColumnAddress,
-            this.ColumnSize});
-            this.moduleGridView.GridControl = this.ModuleGridControl;
-            this.moduleGridView.Name = "moduleGridView";
-            this.moduleGridView.OptionsView.ShowGroupPanel = false;
-            this.moduleGridView.OptionsView.ShowIndicator = false;
+            moduleGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            ColumnName,
+            ColumnAddress,
+            ColumnSize});
+            moduleGridView.GridControl = ModuleGridControl;
+            moduleGridView.Name = "moduleGridView";
+            moduleGridView.OptionsView.ShowGroupPanel = false;
+            moduleGridView.OptionsView.ShowIndicator = false;
             // 
             // ColumnName
             // 
-            this.ColumnName.Caption = "Module Name";
-            this.ColumnName.MinWidth = 25;
-            this.ColumnName.Name = "ColumnName";
-            this.ColumnName.Visible = true;
-            this.ColumnName.VisibleIndex = 0;
-            this.ColumnName.Width = 94;
+            ColumnName.Caption = "Module Name";
+            ColumnName.MinWidth = 25;
+            ColumnName.Name = "ColumnName";
+            ColumnName.Visible = true;
+            ColumnName.VisibleIndex = 0;
+            ColumnName.Width = 94;
             // 
             // ColumnAddress
             // 
-            this.ColumnAddress.Caption = "Base Address";
-            this.ColumnAddress.MinWidth = 25;
-            this.ColumnAddress.Name = "ColumnAddress";
-            this.ColumnAddress.Visible = true;
-            this.ColumnAddress.VisibleIndex = 1;
-            this.ColumnAddress.Width = 94;
+            ColumnAddress.Caption = "Base Address";
+            ColumnAddress.MinWidth = 25;
+            ColumnAddress.Name = "ColumnAddress";
+            ColumnAddress.Visible = true;
+            ColumnAddress.VisibleIndex = 1;
+            ColumnAddress.Width = 94;
             // 
             // ColumnSize
             // 
-            this.ColumnSize.Caption = "Module Size";
-            this.ColumnSize.MinWidth = 25;
-            this.ColumnSize.Name = "ColumnSize";
-            this.ColumnSize.Visible = true;
-            this.ColumnSize.VisibleIndex = 2;
-            this.ColumnSize.Width = 94;
+            ColumnSize.Caption = "Module Size";
+            ColumnSize.MinWidth = 25;
+            ColumnSize.Name = "ColumnSize";
+            ColumnSize.Visible = true;
+            ColumnSize.VisibleIndex = 2;
+            ColumnSize.Width = 94;
             // 
             // ButtonInjectFromConsole
             // 
-            this.ButtonInjectFromConsole.Location = new System.Drawing.Point(12, 494);
-            this.ButtonInjectFromConsole.Name = "ButtonInjectFromConsole";
-            this.ButtonInjectFromConsole.Size = new System.Drawing.Size(422, 29);
-            this.ButtonInjectFromConsole.TabIndex = 1;
-            this.ButtonInjectFromConsole.Text = "Inject Module From Console";
-            this.ButtonInjectFromConsole.Click += new System.EventHandler(this.ButtonInjectFromConsole_Click);
+            ButtonInjectFromConsole.Location = new System.Drawing.Point(12, 494);
+            ButtonInjectFromConsole.Name = "ButtonInjectFromConsole";
+            ButtonInjectFromConsole.Size = new System.Drawing.Size(422, 29);
+            ButtonInjectFromConsole.TabIndex = 1;
+            ButtonInjectFromConsole.Text = "Inject Module From Console";
+            ButtonInjectFromConsole.Click += new System.EventHandler(ButtonInjectFromConsole_Click);
             // 
             // ButtonRefreshModules
             // 
-            this.ButtonRefreshModules.Location = new System.Drawing.Point(12, 356);
-            this.ButtonRefreshModules.Name = "ButtonRefreshModules";
-            this.ButtonRefreshModules.Size = new System.Drawing.Size(422, 29);
-            this.ButtonRefreshModules.TabIndex = 2;
-            this.ButtonRefreshModules.Text = "Refresh Modules";
-            this.ButtonRefreshModules.Click += new System.EventHandler(this.ButtonRefreshModules_Click);
+            ButtonRefreshModules.Location = new System.Drawing.Point(12, 356);
+            ButtonRefreshModules.Name = "ButtonRefreshModules";
+            ButtonRefreshModules.Size = new System.Drawing.Size(422, 29);
+            ButtonRefreshModules.TabIndex = 2;
+            ButtonRefreshModules.Text = "Refresh Modules";
+            ButtonRefreshModules.Click += new System.EventHandler(ButtonRefreshModules_Click);
             // 
             // ButtonClearModules
             // 
-            this.ButtonClearModules.Location = new System.Drawing.Point(12, 391);
-            this.ButtonClearModules.Name = "ButtonClearModules";
-            this.ButtonClearModules.Size = new System.Drawing.Size(422, 29);
-            this.ButtonClearModules.TabIndex = 3;
-            this.ButtonClearModules.Text = "Clear Modules";
-            this.ButtonClearModules.Click += new System.EventHandler(this.ButtonClearModules_Click);
+            ButtonClearModules.Location = new System.Drawing.Point(12, 391);
+            ButtonClearModules.Name = "ButtonClearModules";
+            ButtonClearModules.Size = new System.Drawing.Size(422, 29);
+            ButtonClearModules.TabIndex = 3;
+            ButtonClearModules.Text = "Clear Modules";
+            ButtonClearModules.Click += new System.EventHandler(ButtonClearModules_Click);
             // 
             // ButtonInjectFromPC
             // 
-            this.ButtonInjectFromPC.Location = new System.Drawing.Point(12, 529);
-            this.ButtonInjectFromPC.Name = "ButtonInjectFromPC";
-            this.ButtonInjectFromPC.Size = new System.Drawing.Size(422, 29);
-            this.ButtonInjectFromPC.TabIndex = 4;
-            this.ButtonInjectFromPC.Text = "Inject Module From PC";
-            this.ButtonInjectFromPC.Click += new System.EventHandler(this.ButtonInjectFromPC_Click);
+            ButtonInjectFromPC.Location = new System.Drawing.Point(12, 529);
+            ButtonInjectFromPC.Name = "ButtonInjectFromPC";
+            ButtonInjectFromPC.Size = new System.Drawing.Size(422, 29);
+            ButtonInjectFromPC.TabIndex = 4;
+            ButtonInjectFromPC.Text = "Inject Module From PC";
+            ButtonInjectFromPC.Click += new System.EventHandler(ButtonInjectFromPC_Click);
             // 
             // LabelModulePath
             // 
-            this.LabelModulePath.Location = new System.Drawing.Point(12, 467);
-            this.LabelModulePath.Name = "LabelModulePath";
-            this.LabelModulePath.Size = new System.Drawing.Size(75, 16);
-            this.LabelModulePath.TabIndex = 5;
-            this.LabelModulePath.Text = "Module Path:";
+            LabelModulePath.Location = new System.Drawing.Point(12, 467);
+            LabelModulePath.Name = "LabelModulePath";
+            LabelModulePath.Size = new System.Drawing.Size(75, 16);
+            LabelModulePath.TabIndex = 5;
+            LabelModulePath.Text = "Module Path:";
             // 
             // TextEditPath
             // 
-            this.TextEditPath.EditValue = "Hdd:\\\\";
-            this.TextEditPath.Location = new System.Drawing.Point(93, 462);
-            this.TextEditPath.Name = "TextEditPath";
-            this.TextEditPath.Size = new System.Drawing.Size(341, 26);
-            this.TextEditPath.TabIndex = 6;
+            TextEditPath.EditValue = "Hdd:\\\\";
+            TextEditPath.Location = new System.Drawing.Point(93, 462);
+            TextEditPath.Name = "TextEditPath";
+            TextEditPath.Size = new System.Drawing.Size(341, 26);
+            TextEditPath.TabIndex = 6;
             // 
             // separatorControl1
             // 
-            this.separatorControl1.Location = new System.Drawing.Point(12, 426);
-            this.separatorControl1.Name = "separatorControl1";
-            this.separatorControl1.Size = new System.Drawing.Size(422, 23);
-            this.separatorControl1.TabIndex = 7;
+            separatorControl1.Location = new System.Drawing.Point(12, 426);
+            separatorControl1.Name = "separatorControl1";
+            separatorControl1.Size = new System.Drawing.Size(422, 23);
+            separatorControl1.TabIndex = 7;
             // 
             // ModuleConfigurator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 573);
-            this.Controls.Add(this.separatorControl1);
-            this.Controls.Add(this.TextEditPath);
-            this.Controls.Add(this.LabelModulePath);
-            this.Controls.Add(this.ButtonInjectFromPC);
-            this.Controls.Add(this.ButtonClearModules);
-            this.Controls.Add(this.ButtonRefreshModules);
-            this.Controls.Add(this.ButtonInjectFromConsole);
-            this.Controls.Add(this.ModuleGridControl);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.ShowIcon = false;
-            this.MaximizeBox = false;
-            this.Name = "ModuleConfigurator";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cerberus AIO - Module Configurator";
-            this.Load += new System.EventHandler(this.ModuleConfigurator_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ModuleGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEditPath.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(446, 573);
+            Controls.Add(separatorControl1);
+            Controls.Add(TextEditPath);
+            Controls.Add(LabelModulePath);
+            Controls.Add(ButtonInjectFromPC);
+            Controls.Add(ButtonClearModules);
+            Controls.Add(ButtonRefreshModules);
+            Controls.Add(ButtonInjectFromConsole);
+            Controls.Add(ModuleGridControl);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            IconOptions.ShowIcon = false;
+            MaximizeBox = false;
+            Name = "ModuleConfigurator";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Cerberus AIO - Module Configurator";
+            Load += new System.EventHandler(ModuleConfigurator_Load);
+            ((System.ComponentModel.ISupportInitialize)(ModuleGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(moduleGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(TextEditPath.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(separatorControl1)).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

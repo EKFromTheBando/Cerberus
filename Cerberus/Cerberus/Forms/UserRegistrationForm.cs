@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.Management;
 using System.Net.Http;
 using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,7 +21,7 @@ namespace Cerberus.Cerberus
             var connectionStringSettings = ConfigurationManager.ConnectionStrings["UserInfoDb"];
             if (connectionStringSettings == null)
             {
-                MessageBox.Show("Connection string 'UserInfoDb' not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Connection string 'UserInfoDb' not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 // Handle the error or exit
                 return;
             }
@@ -41,12 +40,21 @@ namespace Cerberus.Cerberus
 
         private string HashPassword(string password)
         {
-            using (var sha256 = SHA256.Create())
+            byte[] salt;
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+
+            using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000))
             {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return BitConverter.ToString(bytes).Replace("-", "").ToLower();
+                byte[] hash = pbkdf2.GetBytes(20);
+                byte[] hashBytes = new byte[36];
+                Array.Copy(salt, 0, hashBytes, 0, 16);
+                Array.Copy(hash, 0, hashBytes, 16, 20);
+
+                return Convert.ToBase64String(hashBytes);
             }
         }
+
+
 
         private string GetMachineHWID()
         {
@@ -82,7 +90,7 @@ namespace Cerberus.Cerberus
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error retrieving IP address: {ex.Message}", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"Error retrieving IP address:" + ex.Message);
                     return null;
                 }
             }
@@ -98,17 +106,17 @@ namespace Cerberus.Cerberus
 
             if (password != confirmPassword)
             {
-                MessageBox.Show("Passwords do not match", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Passwords do not match", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (ip == null)
             {
-                MessageBox.Show("Failed to retrieve IP address. Registration cannot proceed.", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Failed to retrieve IP address. Registration cannot proceed.", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            string passwordHash = HashPassword(password);
+            string passwordHash = HashPassword(password); // Pass salt here
 
             // Truncate HWID to fit column size if necessary
             string truncatedHwid = TruncateString(hwid, 255); // Assuming HWID column is NVARCHAR(255)
@@ -126,13 +134,13 @@ namespace Cerberus.Cerberus
 
                     if (hwidCount > 0)
                     {
-                        MessageBox.Show("An account is already registered on this machine.", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show("An account is already registered on this machine.", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
 
                 // Register the new user and insert HWID
-                string userQuery = "INSERT INTO UserInfo (Username, PasswordHash, IP, HWID) VALUES (@Username, @PasswordHash, @IP, @HWID)";
+                string userQuery = "INSERT INTO UserInfo (Username, PasswordHash, IP, HWID, IsUserBanned) VALUES (@Username, @PasswordHash, @IP, @HWID, @IsUserBanned)";
 
                 using (SqlCommand userCommand = new SqlCommand(userQuery, connection))
                 {
@@ -140,19 +148,21 @@ namespace Cerberus.Cerberus
                     userCommand.Parameters.AddWithValue("@PasswordHash", passwordHash);
                     userCommand.Parameters.AddWithValue("@IP", ip);
                     userCommand.Parameters.AddWithValue("@HWID", truncatedHwid);
+                    userCommand.Parameters.AddWithValue("@IsUserBanned", 0); // Set default value to false
 
                     try
                     {
                         userCommand.ExecuteNonQuery();
-                        MessageBox.Show("User registration successful, you can now return to the login page.", "Cerberus AIO");
+                        XtraMessageBox.Show("User registration successful, you can now return to the login page.", "Cerberus AIO");
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show($"An error occurred: {ex.Message}", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show($"An error occurred: {ex.Message}", "Cerberus AIO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
+
 
         // Method to truncate strings if they exceed a maximum length
         private string TruncateString(string value, int maxLength)

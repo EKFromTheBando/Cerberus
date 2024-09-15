@@ -28,83 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GroupListItems = new DevExpress.XtraEditors.GroupControl();
-            this.GridControlListItems = new DevExpress.XtraGrid.GridControl();
-            this.GridViewListItems = new DevExpress.XtraGrid.Views.Grid.GridView();
-            ((System.ComponentModel.ISupportInitialize)(this.GroupListItems)).BeginInit();
-            this.GroupListItems.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlListItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewListItems)).BeginInit();
-            this.SuspendLayout();
+            GroupListItems = new DevExpress.XtraEditors.GroupControl();
+            GridControlListItems = new DevExpress.XtraGrid.GridControl();
+            GridViewListItems = new DevExpress.XtraGrid.Views.Grid.GridView();
+            ((System.ComponentModel.ISupportInitialize)(GroupListItems)).BeginInit();
+            GroupListItems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(GridControlListItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(GridViewListItems)).BeginInit();
+            SuspendLayout();
             // 
             // GroupListItems
             // 
-            this.GroupListItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            GroupListItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GroupListItems.Controls.Add(this.GridControlListItems);
-            this.GroupListItems.Location = new System.Drawing.Point(13, 13);
-            this.GroupListItems.Margin = new System.Windows.Forms.Padding(4);
-            this.GroupListItems.Name = "GroupListItems";
-            this.GroupListItems.Size = new System.Drawing.Size(231, 269);
-            this.GroupListItems.TabIndex = 4;
-            this.GroupListItems.Text = "Choose Item...";
+            GroupListItems.Controls.Add(GridControlListItems);
+            GroupListItems.Location = new System.Drawing.Point(13, 13);
+            GroupListItems.Margin = new System.Windows.Forms.Padding(4);
+            GroupListItems.Name = "GroupListItems";
+            GroupListItems.Size = new System.Drawing.Size(231, 269);
+            GroupListItems.TabIndex = 4;
+            GroupListItems.Text = "Choose Item...";
             // 
             // GridControlListItems
             // 
-            this.GridControlListItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.GridControlListItems.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.GridControlListItems.Location = new System.Drawing.Point(2, 28);
-            this.GridControlListItems.MainView = this.GridViewListItems;
-            this.GridControlListItems.Margin = new System.Windows.Forms.Padding(0);
-            this.GridControlListItems.Name = "GridControlListItems";
-            this.GridControlListItems.Size = new System.Drawing.Size(227, 239);
-            this.GridControlListItems.TabIndex = 1;
-            this.GridControlListItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.GridViewListItems});
+            GridControlListItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            GridControlListItems.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            GridControlListItems.Location = new System.Drawing.Point(2, 28);
+            GridControlListItems.MainView = GridViewListItems;
+            GridControlListItems.Margin = new System.Windows.Forms.Padding(0);
+            GridControlListItems.Name = "GridControlListItems";
+            GridControlListItems.Size = new System.Drawing.Size(227, 239);
+            GridControlListItems.TabIndex = 1;
+            GridControlListItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            GridViewListItems});
             // 
             // GridViewListItems
             // 
-            this.GridViewListItems.ActiveFilterEnabled = false;
-            this.GridViewListItems.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.GridViewListItems.DetailHeight = 437;
-            this.GridViewListItems.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
-            this.GridViewListItems.GridControl = this.GridControlListItems;
-            this.GridViewListItems.Name = "GridViewListItems";
-            this.GridViewListItems.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.GridViewListItems.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.GridViewListItems.OptionsBehavior.Editable = false;
-            this.GridViewListItems.OptionsBehavior.ReadOnly = true;
-            this.GridViewListItems.OptionsCustomization.AllowFilter = false;
-            this.GridViewListItems.OptionsEditForm.PopupEditFormWidth = 1000;
-            this.GridViewListItems.OptionsFilter.AllowFilterEditor = false;
-            this.GridViewListItems.OptionsMenu.ShowAutoFilterRowItem = false;
-            this.GridViewListItems.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.GridViewListItems.OptionsView.ShowColumnHeaders = false;
-            this.GridViewListItems.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
-            this.GridViewListItems.OptionsView.ShowGroupExpandCollapseButtons = false;
-            this.GridViewListItems.OptionsView.ShowGroupPanel = false;
-            this.GridViewListItems.OptionsView.ShowIndicator = false;
-            this.GridViewListItems.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Indicator;
+            GridViewListItems.ActiveFilterEnabled = false;
+            GridViewListItems.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            GridViewListItems.DetailHeight = 437;
+            GridViewListItems.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.None;
+            GridViewListItems.GridControl = GridControlListItems;
+            GridViewListItems.Name = "GridViewListItems";
+            GridViewListItems.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            GridViewListItems.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            GridViewListItems.OptionsBehavior.Editable = false;
+            GridViewListItems.OptionsBehavior.ReadOnly = true;
+            GridViewListItems.OptionsCustomization.AllowFilter = false;
+            GridViewListItems.OptionsEditForm.PopupEditFormWidth = 1000;
+            GridViewListItems.OptionsFilter.AllowFilterEditor = false;
+            GridViewListItems.OptionsMenu.ShowAutoFilterRowItem = false;
+            GridViewListItems.OptionsSelection.EnableAppearanceFocusedCell = false;
+            GridViewListItems.OptionsView.ShowColumnHeaders = false;
+            GridViewListItems.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            GridViewListItems.OptionsView.ShowGroupExpandCollapseButtons = false;
+            GridViewListItems.OptionsView.ShowGroupPanel = false;
+            GridViewListItems.OptionsView.ShowIndicator = false;
+            GridViewListItems.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Indicator;
             // 
             // ListViewDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(257, 295);
-            this.Controls.Add(this.GroupListItems);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.IconOptions.ShowIcon = false;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ListViewDialog";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cereberus AIO";
-            ((System.ComponentModel.ISupportInitialize)(this.GroupListItems)).EndInit();
-            this.GroupListItems.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridControlListItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewListItems)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(257, 295);
+            Controls.Add(GroupListItems);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            IconOptions.ShowIcon = false;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ListViewDialog";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Cereberus AIO";
+            ((System.ComponentModel.ISupportInitialize)(GroupListItems)).EndInit();
+            GroupListItems.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(GridControlListItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(GridViewListItems)).EndInit();
+            ResumeLayout(false);
 
         }
 

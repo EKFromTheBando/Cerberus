@@ -71,11 +71,11 @@ namespace Cerberus.Cerberus.Helpers
 
         public bool IsDisposed { get; protected set; }
 
-        internal EndianIO() { }
+        internal EndianIO(byte[] xMACS_RSA_PUB2048, string str2) { }
 
         public EndianIO(string FileLocation, EndianTypes EndianType, FileMode Mode = FileMode.Open, FileAccess Access = FileAccess.ReadWrite, FileShare Share = FileShare.Read) : this(new FileStream(FileLocation, Mode, Access, Share), EndianType)
         {
-            this.FileLocation = FileLocation;
+            FileLocation = FileLocation;
         }
 
         public EndianIO(Stream Stream, EndianTypes EndianType)
@@ -83,8 +83,8 @@ namespace Cerberus.Cerberus.Helpers
             if (!Stream.CanSeek) throw new Exception("EndianIO: Invalid stream specified. It doesn't support seeking.");
             if (Stream.CanRead) rdr = new EndianReader(Stream, EndianType);
             if (Stream.CanWrite) wtr = new EndianWriter(Stream, EndianType);
-            this.EndianType = EndianType;
-            this.Stream = Stream;
+            EndianType = EndianType;
+            Stream = Stream;
             IsOpen = true;
         }
 
@@ -156,7 +156,7 @@ namespace Cerberus.Cerberus.Helpers
             }
         }
 
-        public EndianReader(Stream Input, EndianTypes EndianType) : base(Input) { this.EndianType = EndianType; }
+        public EndianReader(Stream Input, EndianTypes EndianType) : base(Input) { EndianType = EndianType; }
 
         #endregion
 
@@ -331,7 +331,7 @@ namespace Cerberus.Cerberus.Helpers
             }
         }
 
-        public EndianWriter(Stream Input, EndianTypes EndianType) : base(Input) { this.EndianType = EndianType; }
+        public EndianWriter(Stream Input, EndianTypes EndianType) : base(Input) { EndianType = EndianType; }
 
         #endregion
 

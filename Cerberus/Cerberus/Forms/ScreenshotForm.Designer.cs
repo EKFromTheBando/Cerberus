@@ -28,93 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PictureBoxScreenshot = new DevExpress.XtraEditors.PictureEdit();
-            this.ButtonCopyToClipboard = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonExportScreenshot = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonTakeScreenshot = new DevExpress.XtraEditors.SimpleButton();
-            this.ToggleUploadToImgur = new DevExpress.XtraEditors.ToggleSwitch();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxScreenshot.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ToggleUploadToImgur.Properties)).BeginInit();
-            this.SuspendLayout();
+            PictureBoxScreenshot = new DevExpress.XtraEditors.PictureEdit();
+            ButtonCopyToClipboard = new DevExpress.XtraEditors.SimpleButton();
+            ButtonExportScreenshot = new DevExpress.XtraEditors.SimpleButton();
+            ButtonTakeScreenshot = new DevExpress.XtraEditors.SimpleButton();
+            ToggleUploadToImgur = new DevExpress.XtraEditors.ToggleSwitch();
+            labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(PictureBoxScreenshot.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(ToggleUploadToImgur.Properties)).BeginInit();
+            SuspendLayout();
             // 
             // PictureBoxScreenshot
             // 
-            this.PictureBoxScreenshot.Location = new System.Drawing.Point(16, 15);
-            this.PictureBoxScreenshot.Name = "PictureBoxScreenshot";
-            this.PictureBoxScreenshot.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.PictureBoxScreenshot.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.PictureBoxScreenshot.Size = new System.Drawing.Size(640, 360);
-            this.PictureBoxScreenshot.TabIndex = 1;
+            PictureBoxScreenshot.Location = new System.Drawing.Point(16, 15);
+            PictureBoxScreenshot.Name = "PictureBoxScreenshot";
+            PictureBoxScreenshot.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            PictureBoxScreenshot.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            PictureBoxScreenshot.Size = new System.Drawing.Size(640, 360);
+            PictureBoxScreenshot.TabIndex = 1;
             // 
             // ButtonCopyToClipboard
             // 
-            this.ButtonCopyToClipboard.Location = new System.Drawing.Point(169, 381);
-            this.ButtonCopyToClipboard.Name = "ButtonCopyToClipboard";
-            this.ButtonCopyToClipboard.Size = new System.Drawing.Size(129, 44);
-            this.ButtonCopyToClipboard.TabIndex = 4;
-            this.ButtonCopyToClipboard.Text = "Copy to Clipboard";
-            this.ButtonCopyToClipboard.Click += new System.EventHandler(this.ButtonCopyToClipboard_Click);
+            ButtonCopyToClipboard.Location = new System.Drawing.Point(169, 381);
+            ButtonCopyToClipboard.Name = "ButtonCopyToClipboard";
+            ButtonCopyToClipboard.Size = new System.Drawing.Size(129, 44);
+            ButtonCopyToClipboard.TabIndex = 4;
+            ButtonCopyToClipboard.Text = "Copy to Clipboard";
+            ButtonCopyToClipboard.Click += new System.EventHandler(ButtonCopyToClipboard_Click);
             // 
             // ButtonExportScreenshot
             // 
-            this.ButtonExportScreenshot.Appearance.Options.UseTextOptions = true;
-            this.ButtonExportScreenshot.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.ButtonExportScreenshot.Location = new System.Drawing.Point(304, 381);
-            this.ButtonExportScreenshot.Name = "ButtonExportScreenshot";
-            this.ButtonExportScreenshot.Size = new System.Drawing.Size(129, 44);
-            this.ButtonExportScreenshot.TabIndex = 7;
-            this.ButtonExportScreenshot.Text = "Export Screenshot";
-            this.ButtonExportScreenshot.Click += new System.EventHandler(this.ButtonExportScreenshot_Click);
+            ButtonExportScreenshot.Appearance.Options.UseTextOptions = true;
+            ButtonExportScreenshot.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            ButtonExportScreenshot.Location = new System.Drawing.Point(304, 381);
+            ButtonExportScreenshot.Name = "ButtonExportScreenshot";
+            ButtonExportScreenshot.Size = new System.Drawing.Size(129, 44);
+            ButtonExportScreenshot.TabIndex = 7;
+            ButtonExportScreenshot.Text = "Export Screenshot";
+            ButtonExportScreenshot.Click += new System.EventHandler(ButtonExportScreenshot_Click);
             // 
             // ButtonTakeScreenshot
             // 
-            this.ButtonTakeScreenshot.Location = new System.Drawing.Point(34, 381);
-            this.ButtonTakeScreenshot.Name = "ButtonTakeScreenshot";
-            this.ButtonTakeScreenshot.Size = new System.Drawing.Size(129, 44);
-            this.ButtonTakeScreenshot.TabIndex = 2;
-            this.ButtonTakeScreenshot.Text = "Take Screenshot";
-            this.ButtonTakeScreenshot.Click += new System.EventHandler(this.ButtonTakeScreenshot_Click);
+            ButtonTakeScreenshot.Location = new System.Drawing.Point(34, 381);
+            ButtonTakeScreenshot.Name = "ButtonTakeScreenshot";
+            ButtonTakeScreenshot.Size = new System.Drawing.Size(129, 44);
+            ButtonTakeScreenshot.TabIndex = 2;
+            ButtonTakeScreenshot.Text = "Take Screenshot";
+            ButtonTakeScreenshot.Click += new System.EventHandler(ButtonTakeScreenshot_Click);
             // 
             // ToggleUploadToImgur
             // 
-            this.ToggleUploadToImgur.Location = new System.Drawing.Point(543, 389);
-            this.ToggleUploadToImgur.Name = "ToggleUploadToImgur";
-            this.ToggleUploadToImgur.Properties.OffText = "Off";
-            this.ToggleUploadToImgur.Properties.OnText = "On";
-            this.ToggleUploadToImgur.Size = new System.Drawing.Size(95, 29);
-            this.ToggleUploadToImgur.TabIndex = 8;
+            ToggleUploadToImgur.Location = new System.Drawing.Point(543, 389);
+            ToggleUploadToImgur.Name = "ToggleUploadToImgur";
+            ToggleUploadToImgur.Properties.OffText = "Off";
+            ToggleUploadToImgur.Properties.OnText = "On";
+            ToggleUploadToImgur.Size = new System.Drawing.Size(95, 29);
+            ToggleUploadToImgur.TabIndex = 8;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(439, 395);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(98, 16);
-            this.labelControl1.TabIndex = 9;
-            this.labelControl1.Text = "Upload to Imgur?";
+            labelControl1.Location = new System.Drawing.Point(439, 395);
+            labelControl1.Name = "labelControl1";
+            labelControl1.Size = new System.Drawing.Size(98, 16);
+            labelControl1.TabIndex = 9;
+            labelControl1.Text = "Upload to Imgur?";
             // 
             // ScreenshotForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 440);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.ToggleUploadToImgur);
-            this.Controls.Add(this.ButtonTakeScreenshot);
-            this.Controls.Add(this.ButtonExportScreenshot);
-            this.Controls.Add(this.ButtonCopyToClipboard);
-            this.Controls.Add(this.PictureBoxScreenshot);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.ShowIcon = false;
-            this.MaximizeBox = false;
-            this.Name = "ScreenshotForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cerberus AIO - Screenshot Utility";
-            this.Load += new System.EventHandler(this.ScreenshotForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxScreenshot.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ToggleUploadToImgur.Properties)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(672, 440);
+            Controls.Add(labelControl1);
+            Controls.Add(ToggleUploadToImgur);
+            Controls.Add(ButtonTakeScreenshot);
+            Controls.Add(ButtonExportScreenshot);
+            Controls.Add(ButtonCopyToClipboard);
+            Controls.Add(PictureBoxScreenshot);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            IconOptions.ShowIcon = false;
+            MaximizeBox = false;
+            Name = "ScreenshotForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Cerberus AIO - Screenshot Utility";
+            Load += new System.EventHandler(ScreenshotForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(PictureBoxScreenshot.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(ToggleUploadToImgur.Properties)).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

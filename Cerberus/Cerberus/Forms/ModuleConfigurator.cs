@@ -14,7 +14,7 @@ namespace Cerberus.Cerberus.Forms
         public ModuleConfigurator(IXboxConsole xboxConsole)
         {
             InitializeComponent();
-            this.xboxConsole = xboxConsole;
+            xboxConsole = xboxConsole;
         }
 
         private void ModuleConfigurator_Load(object sender, EventArgs e)

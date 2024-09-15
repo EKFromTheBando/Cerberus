@@ -15,7 +15,7 @@ namespace Cerberus.Cerberus.Forms
         public ModuleLibForm(IXboxConsole xboxConsole)
         {
             InitializeComponent();
-            this.xboxConsole = xboxConsole;
+            xboxConsole = xboxConsole;
         }
 
         private void ModuleLibForm_Load(object sender, EventArgs e)

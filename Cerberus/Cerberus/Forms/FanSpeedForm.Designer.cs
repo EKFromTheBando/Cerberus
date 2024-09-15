@@ -28,51 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ButtonSetFanSpeed = new DevExpress.XtraEditors.SimpleButton();
-            this.TrackBarFanSpeed = new DevExpress.XtraEditors.TrackBarControl();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBarFanSpeed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBarFanSpeed.Properties)).BeginInit();
-            this.SuspendLayout();
+            ButtonSetFanSpeed = new DevExpress.XtraEditors.SimpleButton();
+            TrackBarFanSpeed = new DevExpress.XtraEditors.TrackBarControl();
+            ((System.ComponentModel.ISupportInitialize)(TrackBarFanSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(TrackBarFanSpeed.Properties)).BeginInit();
+            SuspendLayout();
             // 
             // ButtonSetFanSpeed
             // 
-            this.ButtonSetFanSpeed.Location = new System.Drawing.Point(12, 74);
-            this.ButtonSetFanSpeed.Name = "ButtonSetFanSpeed";
-            this.ButtonSetFanSpeed.Size = new System.Drawing.Size(348, 29);
-            this.ButtonSetFanSpeed.TabIndex = 4;
-            this.ButtonSetFanSpeed.Text = "Set Fan Speed";
-            this.ButtonSetFanSpeed.Click += new System.EventHandler(this.ButtonSetFanSpeed_Click);
+            ButtonSetFanSpeed.Location = new System.Drawing.Point(12, 74);
+            ButtonSetFanSpeed.Name = "ButtonSetFanSpeed";
+            ButtonSetFanSpeed.Size = new System.Drawing.Size(348, 29);
+            ButtonSetFanSpeed.TabIndex = 4;
+            ButtonSetFanSpeed.Text = "Set Fan Speed";
+            ButtonSetFanSpeed.Click += new System.EventHandler(ButtonSetFanSpeed_Click);
             // 
             // TrackBarFanSpeed
             // 
-            this.TrackBarFanSpeed.EditValue = null;
-            this.TrackBarFanSpeed.Location = new System.Drawing.Point(12, 12);
-            this.TrackBarFanSpeed.Name = "TrackBarFanSpeed";
-            this.TrackBarFanSpeed.Properties.LabelAppearance.Options.UseTextOptions = true;
-            this.TrackBarFanSpeed.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.TrackBarFanSpeed.Properties.Maximum = 100;
-            this.TrackBarFanSpeed.Size = new System.Drawing.Size(348, 56);
-            this.TrackBarFanSpeed.TabIndex = 5;
+            TrackBarFanSpeed.EditValue = null;
+            TrackBarFanSpeed.Location = new System.Drawing.Point(12, 12);
+            TrackBarFanSpeed.Name = "TrackBarFanSpeed";
+            TrackBarFanSpeed.Properties.LabelAppearance.Options.UseTextOptions = true;
+            TrackBarFanSpeed.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            TrackBarFanSpeed.Properties.Maximum = 100;
+            TrackBarFanSpeed.Size = new System.Drawing.Size(348, 56);
+            TrackBarFanSpeed.TabIndex = 5;
             // 
             // FanSpeedForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 119);
-            this.Controls.Add(this.TrackBarFanSpeed);
-            this.Controls.Add(this.ButtonSetFanSpeed);
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
-            this.IconOptions.ShowIcon = false;
-            this.MaximizeBox = false;
-            this.Name = "FanSpeedForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Cerberus AIO - Fan Speed Utlity";
-            this.TopMost = true;
-            this.Load += new System.EventHandler(this.FanSpeedForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBarFanSpeed.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TrackBarFanSpeed)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(372, 119);
+            Controls.Add(TrackBarFanSpeed);
+            Controls.Add(ButtonSetFanSpeed);
+            FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            IconOptions.ShowIcon = false;
+            MaximizeBox = false;
+            Name = "FanSpeedForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "Cerberus AIO - Fan Speed Utlity";
+            TopMost = true;
+            Load += new System.EventHandler(FanSpeedForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(TrackBarFanSpeed.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(TrackBarFanSpeed)).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

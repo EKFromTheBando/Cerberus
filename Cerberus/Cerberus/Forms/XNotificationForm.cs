@@ -24,7 +24,7 @@ namespace Cerberus.Cerberus
         public XNotificationForm(IXboxConsole xboxConsole)
         {
             InitializeComponent();
-            this.xboxConsole = xboxConsole;
+            xboxConsole = xboxConsole;
         }
 
         private void XNotificationForm_Load(object sender, EventArgs e)

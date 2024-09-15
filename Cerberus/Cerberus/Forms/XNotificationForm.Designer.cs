@@ -28,45 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TextEditMessage = new DevExpress.XtraEditors.TextEdit();
-            this.LabelMessage = new DevExpress.XtraEditors.LabelControl();
-            this.LabelIcon = new DevExpress.XtraEditors.LabelControl();
-            this.ComboBoxIcons = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.ButtonSendNotification = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.TextEditMessage.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxIcons.Properties)).BeginInit();
-            this.SuspendLayout();
+            TextEditMessage = new DevExpress.XtraEditors.TextEdit();
+            LabelMessage = new DevExpress.XtraEditors.LabelControl();
+            LabelIcon = new DevExpress.XtraEditors.LabelControl();
+            ComboBoxIcons = new DevExpress.XtraEditors.ComboBoxEdit();
+            ButtonSendNotification = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(TextEditMessage.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(ComboBoxIcons.Properties)).BeginInit();
+            SuspendLayout();
             // 
             // TextEditMessage
             // 
-            this.TextEditMessage.Location = new System.Drawing.Point(78, 12);
-            this.TextEditMessage.Name = "TextEditMessage";
-            this.TextEditMessage.Size = new System.Drawing.Size(282, 26);
-            this.TextEditMessage.TabIndex = 0;
+            TextEditMessage.Location = new System.Drawing.Point(78, 12);
+            TextEditMessage.Name = "TextEditMessage";
+            TextEditMessage.Size = new System.Drawing.Size(282, 26);
+            TextEditMessage.TabIndex = 0;
             // 
             // LabelMessage
             // 
-            this.LabelMessage.Location = new System.Drawing.Point(17, 17);
-            this.LabelMessage.Name = "LabelMessage";
-            this.LabelMessage.Size = new System.Drawing.Size(55, 16);
-            this.LabelMessage.TabIndex = 1;
-            this.LabelMessage.Text = "Message:";
+            LabelMessage.Location = new System.Drawing.Point(17, 17);
+            LabelMessage.Name = "LabelMessage";
+            LabelMessage.Size = new System.Drawing.Size(55, 16);
+            LabelMessage.TabIndex = 1;
+            LabelMessage.Text = "Message:";
             // 
             // LabelIcon
             // 
-            this.LabelIcon.Location = new System.Drawing.Point(43, 59);
-            this.LabelIcon.Name = "LabelIcon";
-            this.LabelIcon.Size = new System.Drawing.Size(29, 16);
-            this.LabelIcon.TabIndex = 2;
-            this.LabelIcon.Text = "Icon:";
+            LabelIcon.Location = new System.Drawing.Point(43, 59);
+            LabelIcon.Name = "LabelIcon";
+            LabelIcon.Size = new System.Drawing.Size(29, 16);
+            LabelIcon.TabIndex = 2;
+            LabelIcon.Text = "Icon:";
             // 
             // ComboBoxIcons
             // 
-            this.ComboBoxIcons.Location = new System.Drawing.Point(78, 54);
-            this.ComboBoxIcons.Name = "ComboBoxIcons";
-            this.ComboBoxIcons.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            ComboBoxIcons.Location = new System.Drawing.Point(78, 54);
+            ComboBoxIcons.Name = "ComboBoxIcons";
+            ComboBoxIcons.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ComboBoxIcons.Properties.Items.AddRange(new object[] {
+            ComboBoxIcons.Properties.Items.AddRange(new object[] {
             "Wants You To Play",
             "Wants To Be Your Friend",
             "Envelope Icon",
@@ -90,39 +90,39 @@
             "Game Invite Sent (No Text)",
             "Achievement Unlocked",
             "Ready To Play"});
-            this.ComboBoxIcons.Size = new System.Drawing.Size(282, 26);
-            this.ComboBoxIcons.TabIndex = 3;
+            ComboBoxIcons.Size = new System.Drawing.Size(282, 26);
+            ComboBoxIcons.TabIndex = 3;
             // 
             // ButtonSendNotification
             // 
-            this.ButtonSendNotification.Location = new System.Drawing.Point(78, 95);
-            this.ButtonSendNotification.Name = "ButtonSendNotification";
-            this.ButtonSendNotification.Size = new System.Drawing.Size(282, 29);
-            this.ButtonSendNotification.TabIndex = 4;
-            this.ButtonSendNotification.Text = "Send XNotification";
-            this.ButtonSendNotification.Click += new System.EventHandler(this.ButtonSendNotification_Click);
+            ButtonSendNotification.Location = new System.Drawing.Point(78, 95);
+            ButtonSendNotification.Name = "ButtonSendNotification";
+            ButtonSendNotification.Size = new System.Drawing.Size(282, 29);
+            ButtonSendNotification.TabIndex = 4;
+            ButtonSendNotification.Text = "Send XNotification";
+            ButtonSendNotification.Click += new System.EventHandler(ButtonSendNotification_Click);
             // 
             // XNotificationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 136);
-            this.Controls.Add(this.ButtonSendNotification);
-            this.Controls.Add(this.ComboBoxIcons);
-            this.Controls.Add(this.LabelIcon);
-            this.Controls.Add(this.LabelMessage);
-            this.Controls.Add(this.TextEditMessage);
-            this.IconOptions.ShowIcon = false;
-            this.MaximizeBox = false;
-            this.Name = "XNotificationForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Cerberus AIO - XNotification";
-            this.TopMost = true;
-            this.Load += new System.EventHandler(this.XNotificationForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.TextEditMessage.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComboBoxIcons.Properties)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(372, 136);
+            Controls.Add(ButtonSendNotification);
+            Controls.Add(ComboBoxIcons);
+            Controls.Add(LabelIcon);
+            Controls.Add(LabelMessage);
+            Controls.Add(TextEditMessage);
+            IconOptions.ShowIcon = false;
+            MaximizeBox = false;
+            Name = "XNotificationForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            Text = "Cerberus AIO - XNotification";
+            TopMost = true;
+            Load += new System.EventHandler(XNotificationForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(TextEditMessage.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(ComboBoxIcons.Properties)).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

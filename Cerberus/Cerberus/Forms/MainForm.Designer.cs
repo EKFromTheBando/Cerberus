@@ -52,7 +52,7 @@
             this.ButtonToolsXboxGamesLauncher = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonToolsXboxModuleLoader = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonXUIDSpoofer = new DevExpress.XtraBars.BarButtonItem();
-            this.ButtonDashlaunchEditor = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonINIEditor = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonToolsPsPower = new DevExpress.XtraBars.BarSubItem();
             this.ButtonToolsPsPowerRestart = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonToolsPsPowerHardReboot = new DevExpress.XtraBars.BarButtonItem();
@@ -120,6 +120,8 @@
             this.ButtonFanSpeed = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonLEDSettings = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonClearCache = new DevExpress.XtraBars.BarButtonItem();
+            this.ButtonKeyvaultChecker = new DevExpress.XtraBars.BarButtonItem();
+            this.CheckEditRememberLogin = new DevExpress.XtraBars.BarCheckItem();
             this.RibbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.RibbonGroupConnection = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.RibbonGroupConnsoleProfiles = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -232,7 +234,7 @@
             this.ButtonToolsXboxGamesLauncher,
             this.ButtonToolsXboxModuleLoader,
             this.ButtonXUIDSpoofer,
-            this.ButtonDashlaunchEditor,
+            this.ButtonINIEditor,
             this.ButtonToolsPsPower,
             this.ButtonToolsPsPowerRestart,
             this.ButtonToolsPsPowerHardReboot,
@@ -294,9 +296,11 @@
             this.skinPaletteDropDownButtonItem2,
             this.ButtonFanSpeed,
             this.ButtonLEDSettings,
-            this.ButtonClearCache});
+            this.ButtonClearCache,
+            this.ButtonKeyvaultChecker,
+            this.CheckEditRememberLogin});
             this.RibbonControlMain.Location = new System.Drawing.Point(0, 0);
-            this.RibbonControlMain.MaxItemId = 121;
+            this.RibbonControlMain.MaxItemId = 123;
             this.RibbonControlMain.Name = "RibbonControlMain";
             this.RibbonControlMain.OptionsMenuMinWidth = 353;
             this.RibbonControlMain.OptionsStubGlyphs.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -322,6 +326,7 @@
             this.RibbonControlMain.Size = new System.Drawing.Size(1027, 168);
             this.RibbonControlMain.Toolbar.ShowCustomizeItem = false;
             this.RibbonControlMain.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            this.RibbonControlMain.Click += new System.EventHandler(this.RibbonControlMain_Click);
             // 
             // ButtonUpdate
             // 
@@ -520,14 +525,15 @@
             this.ButtonXUIDSpoofer.Name = "ButtonXUIDSpoofer";
             this.ButtonXUIDSpoofer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // ButtonDashlaunchEditor
+            // ButtonINIEditor
             // 
-            this.ButtonDashlaunchEditor.Caption = "Dashlaunch Editor";
-            this.ButtonDashlaunchEditor.Id = 22;
-            this.ButtonDashlaunchEditor.ImageOptions.Image = global::Cerberus.Properties.Resources.file_editor;
-            this.ButtonDashlaunchEditor.LargeWidth = 74;
-            this.ButtonDashlaunchEditor.Name = "ButtonDashlaunchEditor";
-            this.ButtonDashlaunchEditor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonINIEditor.Caption = "INI File Editor";
+            this.ButtonINIEditor.Id = 22;
+            this.ButtonINIEditor.ImageOptions.Image = global::Cerberus.Properties.Resources.file_editor;
+            this.ButtonINIEditor.LargeWidth = 74;
+            this.ButtonINIEditor.Name = "ButtonINIEditor";
+            this.ButtonINIEditor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonINIEditor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonINIEditor_ItemClick);
             // 
             // ButtonToolsPsPower
             // 
@@ -1055,6 +1061,24 @@
             this.ButtonClearCache.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.ButtonClearCache.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonClearCache_ItemClick);
             // 
+            // ButtonKeyvaultChecker
+            // 
+            this.ButtonKeyvaultChecker.Caption = "Keyvault Checker";
+            this.ButtonKeyvaultChecker.Id = 121;
+            this.ButtonKeyvaultChecker.ImageOptions.Image = global::Cerberus.Properties.Resources.process;
+            this.ButtonKeyvaultChecker.Name = "ButtonKeyvaultChecker";
+            this.ButtonKeyvaultChecker.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.ButtonKeyvaultChecker.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonKeyvaultChecker_ItemClick);
+            // 
+            // CheckEditRememberLogin
+            // 
+            this.CheckEditRememberLogin.BindableChecked = true;
+            this.CheckEditRememberLogin.Caption = "Save credentials?";
+            this.CheckEditRememberLogin.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.AfterText;
+            this.CheckEditRememberLogin.Checked = true;
+            this.CheckEditRememberLogin.Id = 122;
+            this.CheckEditRememberLogin.Name = "CheckEditRememberLogin";
+            // 
             // RibbonPageHome
             // 
             this.RibbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1082,8 +1106,9 @@
             this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonRegister);
             this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.TextEditUsername);
             this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.TextEditPassword);
+            this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.CheckEditRememberLogin);
             this.RibbonGroupConnsoleProfiles.ItemLinks.Add(this.ButtonLogin);
-            this.RibbonGroupConnsoleProfiles.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.TwoRows;
+            this.RibbonGroupConnsoleProfiles.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.ThreeRows;
             this.RibbonGroupConnsoleProfiles.Name = "RibbonGroupConnsoleProfiles";
             this.RibbonGroupConnsoleProfiles.Text = "Cerberus Account";
             // 
@@ -1122,11 +1147,12 @@
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonModuleConfigurator);
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonModuleLibrary);
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonGameSaveResigner);
-            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonDashlaunchEditor);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonINIEditor);
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonXUIDSpoofer);
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonFanSpeed);
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonLEDSettings);
             this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonClearCache);
+            this.RibbonGroupModdingTools.ItemLinks.Add(this.ButtonKeyvaultChecker);
             this.RibbonGroupModdingTools.Name = "RibbonGroupModdingTools";
             this.RibbonGroupModdingTools.Text = "Console Tools";
             // 
@@ -1201,7 +1227,7 @@
             // 
             // MemoEditChangeLog
             // 
-            this.MemoEditChangeLog.EditValue = "Cerberus Change Log:";
+            this.MemoEditChangeLog.EditValue = "Cerberus Change Log";
             this.MemoEditChangeLog.Location = new System.Drawing.Point(730, 2);
             this.MemoEditChangeLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MemoEditChangeLog.MenuManager = this.RibbonControlMain;
@@ -1216,7 +1242,7 @@
             this.PictureBoxAutolobbies.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxAutolobbies.Image")));
             this.PictureBoxAutolobbies.Location = new System.Drawing.Point(315, 289);
             this.PictureBoxAutolobbies.Name = "PictureBoxAutolobbies";
-            this.PictureBoxAutolobbies.Size = new System.Drawing.Size(353, 63);
+            this.PictureBoxAutolobbies.Size = new System.Drawing.Size(409, 63);
             this.PictureBoxAutolobbies.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxAutolobbies.TabIndex = 26;
             this.PictureBoxAutolobbies.TabStop = false;
@@ -1225,9 +1251,9 @@
             // PictureBoxXBLGhost
             // 
             this.PictureBoxXBLGhost.Image = ((System.Drawing.Image)(resources.GetObject("PictureBoxXBLGhost.Image")));
-            this.PictureBoxXBLGhost.Location = new System.Drawing.Point(674, 289);
+            this.PictureBoxXBLGhost.Location = new System.Drawing.Point(730, 289);
             this.PictureBoxXBLGhost.Name = "PictureBoxXBLGhost";
-            this.PictureBoxXBLGhost.Size = new System.Drawing.Size(327, 63);
+            this.PictureBoxXBLGhost.Size = new System.Drawing.Size(271, 63);
             this.PictureBoxXBLGhost.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxXBLGhost.TabIndex = 25;
             this.PictureBoxXBLGhost.TabStop = false;
@@ -1472,11 +1498,10 @@
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.RibbonControlMain);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Ribbon = this.RibbonControlMain;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cerberus AIO [Beta 2.0.2]";
+            this.Text = "    ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar2)).EndInit();
@@ -1533,7 +1558,7 @@
         private DevExpress.XtraBars.BarButtonItem ButtonToolsXboxGamesLauncher;
         private DevExpress.XtraBars.BarButtonItem ButtonToolsXboxModuleLoader;
         private DevExpress.XtraBars.BarButtonItem ButtonXUIDSpoofer;
-        private DevExpress.XtraBars.BarButtonItem ButtonDashlaunchEditor;
+        private DevExpress.XtraBars.BarButtonItem ButtonINIEditor;
         private DevExpress.XtraBars.BarSubItem ButtonToolsPsPower;
         private DevExpress.XtraBars.BarButtonItem ButtonToolsPsPowerRestart;
         private DevExpress.XtraBars.BarButtonItem ButtonToolsPsPowerHardReboot;
@@ -1646,5 +1671,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem ButtonLEDSettings;
         private DevExpress.XtraBars.BarButtonItem ButtonClearCache;
+        private DevExpress.XtraBars.BarButtonItem ButtonKeyvaultChecker;
+        private DevExpress.XtraBars.BarCheckItem CheckEditRememberLogin;
     }
 }

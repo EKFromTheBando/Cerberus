@@ -28,228 +28,228 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.ButtonMyten = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonDestruction = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.ButtonZhivaBO2 = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaWAW = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaBO1Host = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaBO1 = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaGhosts = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaCOD4 = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaMW2Host = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaMW2 = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaMW3 = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonZhivaMW3Host = new DevExpress.XtraEditors.SimpleButton();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.ButtonXBPirate = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonAntiCrash = new DevExpress.XtraEditors.SimpleButton();
-            this.ButtonUnload = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
-            this.SuspendLayout();
+            groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            ButtonMyten = new DevExpress.XtraEditors.SimpleButton();
+            ButtonDestruction = new DevExpress.XtraEditors.SimpleButton();
+            groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            ButtonZhivaBO2 = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaWAW = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaBO1Host = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaBO1 = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaGhosts = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaCOD4 = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaMW2Host = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaMW2 = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaMW3 = new DevExpress.XtraEditors.SimpleButton();
+            ButtonZhivaMW3Host = new DevExpress.XtraEditors.SimpleButton();
+            groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            ButtonXBPirate = new DevExpress.XtraEditors.SimpleButton();
+            ButtonAntiCrash = new DevExpress.XtraEditors.SimpleButton();
+            ButtonUnload = new DevExpress.XtraEditors.SimpleButton();
+            ((System.ComponentModel.ISupportInitialize)(groupControl1)).BeginInit();
+            groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(groupControl2)).BeginInit();
+            groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(groupControl3)).BeginInit();
+            groupControl3.SuspendLayout();
+            SuspendLayout();
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.ButtonDestruction);
-            this.groupControl1.Controls.Add(this.ButtonMyten);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(427, 94);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "All COD Modules";
+            groupControl1.Controls.Add(ButtonDestruction);
+            groupControl1.Controls.Add(ButtonMyten);
+            groupControl1.Location = new System.Drawing.Point(12, 12);
+            groupControl1.Name = "groupControl1";
+            groupControl1.Size = new System.Drawing.Size(427, 94);
+            groupControl1.TabIndex = 0;
+            groupControl1.Text = "All COD Modules";
             // 
             // ButtonMyten
             // 
-            this.ButtonMyten.Location = new System.Drawing.Point(5, 38);
-            this.ButtonMyten.Name = "ButtonMyten";
-            this.ButtonMyten.Size = new System.Drawing.Size(201, 41);
-            this.ButtonMyten.TabIndex = 0;
-            this.ButtonMyten.Text = "Myten V1.2";
-            this.ButtonMyten.Click += new System.EventHandler(this.ButtonMyten_Click);
+            ButtonMyten.Location = new System.Drawing.Point(5, 38);
+            ButtonMyten.Name = "ButtonMyten";
+            ButtonMyten.Size = new System.Drawing.Size(201, 41);
+            ButtonMyten.TabIndex = 0;
+            ButtonMyten.Text = "Myten V1.2";
+            ButtonMyten.Click += new System.EventHandler(ButtonMyten_Click);
             // 
             // ButtonDestruction
             // 
-            this.ButtonDestruction.Location = new System.Drawing.Point(212, 38);
-            this.ButtonDestruction.Name = "ButtonDestruction";
-            this.ButtonDestruction.Size = new System.Drawing.Size(201, 41);
-            this.ButtonDestruction.TabIndex = 1;
-            this.ButtonDestruction.Text = "Destruction V1";
-            this.ButtonDestruction.Click += new System.EventHandler(this.ButtonDestruction_Click);
+            ButtonDestruction.Location = new System.Drawing.Point(212, 38);
+            ButtonDestruction.Name = "ButtonDestruction";
+            ButtonDestruction.Size = new System.Drawing.Size(201, 41);
+            ButtonDestruction.TabIndex = 1;
+            ButtonDestruction.Text = "Destruction V1";
+            ButtonDestruction.Click += new System.EventHandler(ButtonDestruction_Click);
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.ButtonZhivaMW3Host);
-            this.groupControl2.Controls.Add(this.ButtonZhivaMW3);
-            this.groupControl2.Controls.Add(this.ButtonZhivaMW2Host);
-            this.groupControl2.Controls.Add(this.ButtonZhivaMW2);
-            this.groupControl2.Controls.Add(this.ButtonZhivaGhosts);
-            this.groupControl2.Controls.Add(this.ButtonZhivaCOD4);
-            this.groupControl2.Controls.Add(this.ButtonZhivaBO1Host);
-            this.groupControl2.Controls.Add(this.ButtonZhivaBO1);
-            this.groupControl2.Controls.Add(this.ButtonZhivaBO2);
-            this.groupControl2.Controls.Add(this.ButtonZhivaWAW);
-            this.groupControl2.Location = new System.Drawing.Point(12, 112);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(427, 282);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "Zhiva Modules";
+            groupControl2.Controls.Add(ButtonZhivaMW3Host);
+            groupControl2.Controls.Add(ButtonZhivaMW3);
+            groupControl2.Controls.Add(ButtonZhivaMW2Host);
+            groupControl2.Controls.Add(ButtonZhivaMW2);
+            groupControl2.Controls.Add(ButtonZhivaGhosts);
+            groupControl2.Controls.Add(ButtonZhivaCOD4);
+            groupControl2.Controls.Add(ButtonZhivaBO1Host);
+            groupControl2.Controls.Add(ButtonZhivaBO1);
+            groupControl2.Controls.Add(ButtonZhivaBO2);
+            groupControl2.Controls.Add(ButtonZhivaWAW);
+            groupControl2.Location = new System.Drawing.Point(12, 112);
+            groupControl2.Name = "groupControl2";
+            groupControl2.Size = new System.Drawing.Size(427, 282);
+            groupControl2.TabIndex = 1;
+            groupControl2.Text = "Zhiva Modules";
             // 
             // ButtonZhivaBO2
             // 
-            this.ButtonZhivaBO2.Location = new System.Drawing.Point(212, 38);
-            this.ButtonZhivaBO2.Name = "ButtonZhivaBO2";
-            this.ButtonZhivaBO2.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaBO2.TabIndex = 1;
-            this.ButtonZhivaBO2.Text = "BO2";
-            this.ButtonZhivaBO2.Click += new System.EventHandler(this.ButtonZhivaBO2_Click);
+            ButtonZhivaBO2.Location = new System.Drawing.Point(212, 38);
+            ButtonZhivaBO2.Name = "ButtonZhivaBO2";
+            ButtonZhivaBO2.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaBO2.TabIndex = 1;
+            ButtonZhivaBO2.Text = "BO2";
+            ButtonZhivaBO2.Click += new System.EventHandler(ButtonZhivaBO2_Click);
             // 
             // ButtonZhivaWAW
             // 
-            this.ButtonZhivaWAW.Location = new System.Drawing.Point(5, 38);
-            this.ButtonZhivaWAW.Name = "ButtonZhivaWAW";
-            this.ButtonZhivaWAW.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaWAW.TabIndex = 0;
-            this.ButtonZhivaWAW.Text = "MW2";
-            this.ButtonZhivaWAW.Click += new System.EventHandler(this.ButtonZhivaWAW_Click);
+            ButtonZhivaWAW.Location = new System.Drawing.Point(5, 38);
+            ButtonZhivaWAW.Name = "ButtonZhivaWAW";
+            ButtonZhivaWAW.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaWAW.TabIndex = 0;
+            ButtonZhivaWAW.Text = "MW2";
+            ButtonZhivaWAW.Click += new System.EventHandler(ButtonZhivaWAW_Click);
             // 
             // ButtonZhivaBO1Host
             // 
-            this.ButtonZhivaBO1Host.Location = new System.Drawing.Point(212, 132);
-            this.ButtonZhivaBO1Host.Name = "ButtonZhivaBO1Host";
-            this.ButtonZhivaBO1Host.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaBO1Host.TabIndex = 3;
-            this.ButtonZhivaBO1Host.Text = "BO1 Host";
-            this.ButtonZhivaBO1Host.Click += new System.EventHandler(this.ButtonZhivaBO1Host_Click);
+            ButtonZhivaBO1Host.Location = new System.Drawing.Point(212, 132);
+            ButtonZhivaBO1Host.Name = "ButtonZhivaBO1Host";
+            ButtonZhivaBO1Host.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaBO1Host.TabIndex = 3;
+            ButtonZhivaBO1Host.Text = "BO1 Host";
+            ButtonZhivaBO1Host.Click += new System.EventHandler(ButtonZhivaBO1Host_Click);
             // 
             // ButtonZhivaBO1
             // 
-            this.ButtonZhivaBO1.Location = new System.Drawing.Point(5, 132);
-            this.ButtonZhivaBO1.Name = "ButtonZhivaBO1";
-            this.ButtonZhivaBO1.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaBO1.TabIndex = 2;
-            this.ButtonZhivaBO1.Text = "BO1";
-            this.ButtonZhivaBO1.Click += new System.EventHandler(this.ButtonZhivaBO1_Click);
+            ButtonZhivaBO1.Location = new System.Drawing.Point(5, 132);
+            ButtonZhivaBO1.Name = "ButtonZhivaBO1";
+            ButtonZhivaBO1.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaBO1.TabIndex = 2;
+            ButtonZhivaBO1.Text = "BO1";
+            ButtonZhivaBO1.Click += new System.EventHandler(ButtonZhivaBO1_Click);
             // 
             // ButtonZhivaGhosts
             // 
-            this.ButtonZhivaGhosts.Location = new System.Drawing.Point(212, 85);
-            this.ButtonZhivaGhosts.Name = "ButtonZhivaGhosts";
-            this.ButtonZhivaGhosts.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaGhosts.TabIndex = 5;
-            this.ButtonZhivaGhosts.Text = "Ghosts";
-            this.ButtonZhivaGhosts.Click += new System.EventHandler(this.ButtonZhivaGhosts_Click);
+            ButtonZhivaGhosts.Location = new System.Drawing.Point(212, 85);
+            ButtonZhivaGhosts.Name = "ButtonZhivaGhosts";
+            ButtonZhivaGhosts.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaGhosts.TabIndex = 5;
+            ButtonZhivaGhosts.Text = "Ghosts";
+            ButtonZhivaGhosts.Click += new System.EventHandler(ButtonZhivaGhosts_Click);
             // 
             // ButtonZhivaCOD4
             // 
-            this.ButtonZhivaCOD4.Location = new System.Drawing.Point(5, 85);
-            this.ButtonZhivaCOD4.Name = "ButtonZhivaCOD4";
-            this.ButtonZhivaCOD4.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaCOD4.TabIndex = 4;
-            this.ButtonZhivaCOD4.Text = "COD4";
-            this.ButtonZhivaCOD4.Click += new System.EventHandler(this.ButtonZhivaCOD4_Click);
+            ButtonZhivaCOD4.Location = new System.Drawing.Point(5, 85);
+            ButtonZhivaCOD4.Name = "ButtonZhivaCOD4";
+            ButtonZhivaCOD4.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaCOD4.TabIndex = 4;
+            ButtonZhivaCOD4.Text = "COD4";
+            ButtonZhivaCOD4.Click += new System.EventHandler(ButtonZhivaCOD4_Click);
             // 
             // ButtonZhivaMW2Host
             // 
-            this.ButtonZhivaMW2Host.Location = new System.Drawing.Point(212, 179);
-            this.ButtonZhivaMW2Host.Name = "ButtonZhivaMW2Host";
-            this.ButtonZhivaMW2Host.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaMW2Host.TabIndex = 7;
-            this.ButtonZhivaMW2Host.Text = "MW2 Host";
-            this.ButtonZhivaMW2Host.Click += new System.EventHandler(this.ButtonZhivaMW2Host_Click);
+            ButtonZhivaMW2Host.Location = new System.Drawing.Point(212, 179);
+            ButtonZhivaMW2Host.Name = "ButtonZhivaMW2Host";
+            ButtonZhivaMW2Host.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaMW2Host.TabIndex = 7;
+            ButtonZhivaMW2Host.Text = "MW2 Host";
+            ButtonZhivaMW2Host.Click += new System.EventHandler(ButtonZhivaMW2Host_Click);
             // 
             // ButtonZhivaMW2
             // 
-            this.ButtonZhivaMW2.Location = new System.Drawing.Point(5, 179);
-            this.ButtonZhivaMW2.Name = "ButtonZhivaMW2";
-            this.ButtonZhivaMW2.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaMW2.TabIndex = 6;
-            this.ButtonZhivaMW2.Text = "MW2";
-            this.ButtonZhivaMW2.Click += new System.EventHandler(this.ButtonZhivaMW2_Click);
+            ButtonZhivaMW2.Location = new System.Drawing.Point(5, 179);
+            ButtonZhivaMW2.Name = "ButtonZhivaMW2";
+            ButtonZhivaMW2.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaMW2.TabIndex = 6;
+            ButtonZhivaMW2.Text = "MW2";
+            ButtonZhivaMW2.Click += new System.EventHandler(ButtonZhivaMW2_Click);
             // 
             // ButtonZhivaMW3
             // 
-            this.ButtonZhivaMW3.Location = new System.Drawing.Point(5, 226);
-            this.ButtonZhivaMW3.Name = "ButtonZhivaMW3";
-            this.ButtonZhivaMW3.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaMW3.TabIndex = 7;
-            this.ButtonZhivaMW3.Text = "MW3";
-            this.ButtonZhivaMW3.Click += new System.EventHandler(this.ButtonZhivaMW3_Click);
+            ButtonZhivaMW3.Location = new System.Drawing.Point(5, 226);
+            ButtonZhivaMW3.Name = "ButtonZhivaMW3";
+            ButtonZhivaMW3.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaMW3.TabIndex = 7;
+            ButtonZhivaMW3.Text = "MW3";
+            ButtonZhivaMW3.Click += new System.EventHandler(ButtonZhivaMW3_Click);
             // 
             // ButtonZhivaMW3Host
             // 
-            this.ButtonZhivaMW3Host.Location = new System.Drawing.Point(212, 226);
-            this.ButtonZhivaMW3Host.Name = "ButtonZhivaMW3Host";
-            this.ButtonZhivaMW3Host.Size = new System.Drawing.Size(201, 41);
-            this.ButtonZhivaMW3Host.TabIndex = 8;
-            this.ButtonZhivaMW3Host.Text = "MW3 Host";
-            this.ButtonZhivaMW3Host.Click += new System.EventHandler(this.ButtonZhivaMW3Host_Click);
+            ButtonZhivaMW3Host.Location = new System.Drawing.Point(212, 226);
+            ButtonZhivaMW3Host.Name = "ButtonZhivaMW3Host";
+            ButtonZhivaMW3Host.Size = new System.Drawing.Size(201, 41);
+            ButtonZhivaMW3Host.TabIndex = 8;
+            ButtonZhivaMW3Host.Text = "MW3 Host";
+            ButtonZhivaMW3Host.Click += new System.EventHandler(ButtonZhivaMW3Host_Click);
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.ButtonXBPirate);
-            this.groupControl3.Controls.Add(this.ButtonAntiCrash);
-            this.groupControl3.Location = new System.Drawing.Point(12, 400);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(427, 94);
-            this.groupControl3.TabIndex = 2;
-            this.groupControl3.Text = "Misc.";
+            groupControl3.Controls.Add(ButtonXBPirate);
+            groupControl3.Controls.Add(ButtonAntiCrash);
+            groupControl3.Location = new System.Drawing.Point(12, 400);
+            groupControl3.Name = "groupControl3";
+            groupControl3.Size = new System.Drawing.Size(427, 94);
+            groupControl3.TabIndex = 2;
+            groupControl3.Text = "Misc.";
             // 
             // ButtonXBPirate
             // 
-            this.ButtonXBPirate.Location = new System.Drawing.Point(212, 38);
-            this.ButtonXBPirate.Name = "ButtonXBPirate";
-            this.ButtonXBPirate.Size = new System.Drawing.Size(201, 41);
-            this.ButtonXBPirate.TabIndex = 1;
-            this.ButtonXBPirate.Text = "xbPirate";
-            this.ButtonXBPirate.Click += new System.EventHandler(this.ButtonXBPirate_Click);
+            ButtonXBPirate.Location = new System.Drawing.Point(212, 38);
+            ButtonXBPirate.Name = "ButtonXBPirate";
+            ButtonXBPirate.Size = new System.Drawing.Size(201, 41);
+            ButtonXBPirate.TabIndex = 1;
+            ButtonXBPirate.Text = "xbPirate";
+            ButtonXBPirate.Click += new System.EventHandler(ButtonXBPirate_Click);
             // 
             // ButtonAntiCrash
             // 
-            this.ButtonAntiCrash.Location = new System.Drawing.Point(5, 38);
-            this.ButtonAntiCrash.Name = "ButtonAntiCrash";
-            this.ButtonAntiCrash.Size = new System.Drawing.Size(201, 41);
-            this.ButtonAntiCrash.TabIndex = 0;
-            this.ButtonAntiCrash.Text = "Anti Crash";
-            this.ButtonAntiCrash.Click += new System.EventHandler(this.ButtonAntiCrash_Click);
+            ButtonAntiCrash.Location = new System.Drawing.Point(5, 38);
+            ButtonAntiCrash.Name = "ButtonAntiCrash";
+            ButtonAntiCrash.Size = new System.Drawing.Size(201, 41);
+            ButtonAntiCrash.TabIndex = 0;
+            ButtonAntiCrash.Text = "Anti Crash";
+            ButtonAntiCrash.Click += new System.EventHandler(ButtonAntiCrash_Click);
             // 
             // ButtonUnload
             // 
-            this.ButtonUnload.Location = new System.Drawing.Point(12, 500);
-            this.ButtonUnload.Name = "ButtonUnload";
-            this.ButtonUnload.Size = new System.Drawing.Size(427, 30);
-            this.ButtonUnload.TabIndex = 3;
-            this.ButtonUnload.Text = "Unload Previously Loaded Module";
-            this.ButtonUnload.Click += new System.EventHandler(this.ButtonUnload_Click);
+            ButtonUnload.Location = new System.Drawing.Point(12, 500);
+            ButtonUnload.Name = "ButtonUnload";
+            ButtonUnload.Size = new System.Drawing.Size(427, 30);
+            ButtonUnload.TabIndex = 3;
+            ButtonUnload.Text = "Unload Previously Loaded Module";
+            ButtonUnload.Click += new System.EventHandler(ButtonUnload_Click);
             // 
             // ModuleLibForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 541);
-            this.Controls.Add(this.ButtonUnload);
-            this.Controls.Add(this.groupControl3);
-            this.Controls.Add(this.groupControl2);
-            this.Controls.Add(this.groupControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.ShowIcon = false;
-            this.MaximizeBox = false;
-            this.Name = "ModuleLibForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cerberus AIO - Module Library";
-            this.Load += new System.EventHandler(this.ModuleLibForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(451, 541);
+            Controls.Add(ButtonUnload);
+            Controls.Add(groupControl3);
+            Controls.Add(groupControl2);
+            Controls.Add(groupControl1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            IconOptions.ShowIcon = false;
+            MaximizeBox = false;
+            Name = "ModuleLibForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "Cerberus AIO - Module Library";
+            Load += new System.EventHandler(ModuleLibForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(groupControl1)).EndInit();
+            groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(groupControl2)).EndInit();
+            groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(groupControl3)).EndInit();
+            groupControl3.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
